@@ -1,0 +1,20 @@
+name: GravityEssentials
+version: 1.0
+main: net.GravityNetwork.Essentials.Main
+
+commands:
+   afk:
+     usage: /<command>
+     description: Set yourself away from keyboard.
+     aliases: [eafk,away,eaway]
+   broadcast:
+     usage: /<command>
+     description: Broadcast a message
+     aliases: [bc,ebc,bcast,ebcast,ebroadcast,shout,eshout]
+   viewinv:
+     usage: /<command> <player>
+     description: See the inventory of other players.
+     aliases: [einvsee, invsee, seeinventory, seeinv]
+   poke:
+     usage: /<command> <player>
+     description: Poke a player

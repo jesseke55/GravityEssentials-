@@ -27,8 +27,6 @@ public class Main extends JavaPlugin implements Listener {
 
         pm.registerEvents(new Broadcast(), this);
 
-        pm.registerEvents(new CI(), this);
-
         pm.registerEvents(new InventoryInspector(), this);
 
         pm.registerEvents(new Poke(), this);
@@ -46,7 +44,8 @@ public class Main extends JavaPlugin implements Listener {
 
     private void cmds(){
         getCommand("afk").setExecutor(new Afk() );
-        getCommand("ci").setExecutor(new CI() );
+        getCommand("broadcast").setExecutor(new Broadcast() );
+        getCommand("poke").setExecutor(new Poke() );
     }
 
     private void CONFIGURATION(){

@@ -17,7 +17,7 @@ public class Broadcast implements Listener, CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args)
     {
-        if (cmd.getName().equalsIgnoreCase("bc"))
+        if (cmd.getName().equalsIgnoreCase("broadcast"))
         {
             if (((sender instanceof Player)) || (!(sender instanceof Player))) {
                 if (sender.hasPermission("gravityessentials.bc"))
