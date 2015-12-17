@@ -28,6 +28,8 @@ public class Main extends JavaPlugin implements Listener {
 
         pm.registerEvents(new Broadcast(), this);
 
+        pm.registerEvents(new EnderChest(), this);
+
         pm.registerEvents(new InventoryInspector(), this);
 
         pm.registerEvents(new Poke(), this);
@@ -45,7 +47,13 @@ public class Main extends JavaPlugin implements Listener {
 
     private void cmds(){
         getCommand("afk").setExecutor(new Afk() );
+
         getCommand("broadcast").setExecutor(new Broadcast() );
+
+        getCommand("enderchest").setExecutor(new EnderChest() );
+
+        getCommand("viewinv").setExecutor(new InventoryInspector() );
+
         getCommand("poke").setExecutor(new Poke() );
     }
 
