@@ -1,4 +1,4 @@
-package net.GravityNetwork.Essentials;
+package net.GravityNetwork.Essentials.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

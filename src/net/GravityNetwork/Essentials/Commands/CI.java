@@ -1,4 +1,4 @@
-package net.GravityNetwork.Essentials;
+package net.GravityNetwork.Essentials.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -16,7 +16,7 @@ public class CI implements Listener, CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("ci")) {
             if ((sender instanceof Player)) {
-                if (sender.hasPermission("minechill.ci.self")) {
+                if (sender.hasPermission("gravityessentials.ci.self")) {
                     Player player = (Player) sender;
                     if (args.length == 0) {
                         player.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "SUCCESS" + ChatColor.GRAY + ":" + ChatColor.WHITE + " Your inventory has been cleared!");
