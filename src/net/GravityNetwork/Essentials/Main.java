@@ -18,9 +18,15 @@ public class Main extends JavaPlugin implements Listener {
     private static Plugin plugin;
     public void onEnable(){
         plugin = this;
+        cmds();
         pm.registerEvents(this,this);
     }
     public void onDisable(){
         plugin = null;
+    }
+
+    private void cmds(){
+        getCommand("afk").setExecutor(new Afk() );
+        getCommand("ci").setExecutor(new CI() );
     }
 }

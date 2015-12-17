@@ -92,7 +92,7 @@ public class Afk implements CommandExecutor, Listener {
                         }
                     }
                     else {
-                        sender.sendMessage("&4&lFAULT&r&7: " + args[0] + " isn't online!");
+                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lFAULT&r&7: " + args[0] + " isn't online!"));
                     }
                 }
                 else if ((args.length != 0) || (args.length != 1))
