@@ -21,6 +21,7 @@ public class Main extends JavaPlugin implements Listener {
         plugin = this;
         cmds();
         CONFIGURATION();
+        Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
 
         pm.registerEvents(new Afk(), this);
