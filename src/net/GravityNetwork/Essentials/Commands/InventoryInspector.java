@@ -1,5 +1,6 @@
 package net.GravityNetwork.Essentials.Commands;
 
+import net.GravityNetwork.Essentials.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -28,7 +29,7 @@ public class InventoryInspector implements Listener, CommandExecutor {
                 {
                     if (args.length == 0)
                     {
-                        sender.sendMessage(ChatColor.DARK_RED +"" + ChatColor.BOLD + "FAULT" + ChatColor.GRAY + ": Please use the correct format! /viewinv <nickname>");
+                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("ENTER_ARGUMENT")));
                     }
                     else if (args.length == 1)
                     {
@@ -44,7 +45,7 @@ public class InventoryInspector implements Listener, CommandExecutor {
                     }
                 }
                 else {
-                    sender.sendMessage(ChatColor.DARK_RED +""+ ChatColor.BOLD + "FAULT" + ChatColor.GRAY + ": " + ChatColor.WHITE + "You do not have permission to use this command!");
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("NO_PERMISSION")));
                 }
             }
             return true;

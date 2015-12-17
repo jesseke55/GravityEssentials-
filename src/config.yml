@@ -1,1 +1,3 @@
 BROADCAST_PREFIX: '&b&lBROADCAST&7: '
+NO_PERMISSION: '&4&lFAULT &7: You do not have permission to use this command!'
+ENTER_ARGUMENT: '&4&lFAULT &7: Please use the right format!'

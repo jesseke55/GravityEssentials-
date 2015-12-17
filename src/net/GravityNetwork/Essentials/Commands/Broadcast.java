@@ -24,7 +24,7 @@ public class Broadcast implements Listener, CommandExecutor {
                 {
                     if (args.length == 0)
                     {
-                        sender.sendMessage(ChatColor.DARK_RED +""+ ChatColor.BOLD + "FAULT" + ChatColor.GRAY + ": Please specify a message you wish to broadcast to the server!");
+                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("ENTER_ARGUMENT")));
                         return true;
                     }
                     String msg = "";
@@ -44,7 +44,7 @@ public class Broadcast implements Listener, CommandExecutor {
                 }
                 else
                 {
-                    sender.sendMessage(ChatColor.DARK_RED + ""+ ChatColor.BOLD + "FAULT" + ChatColor.GRAY + ": You do not have permission to use this command!");
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("NO_PERMISSION")));
                 }
             }
             return true;
