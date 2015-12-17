@@ -1,7 +1,6 @@
 package net.GravityNetwork.Essentials;
 
-import net.GravityNetwork.Essentials.Commands.Afk;
-import net.GravityNetwork.Essentials.Commands.CI;
+import net.GravityNetwork.Essentials.Commands.*;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
@@ -21,7 +20,25 @@ public class Main extends JavaPlugin implements Listener {
     public void onEnable(){
         plugin = this;
         cmds();
-        pm.registerEvents(this,this);
+        CONFIGURATION();
+
+
+        pm.registerEvents(new Afk(), this);
+
+        pm.registerEvents(new Broadcast(), this);
+
+        pm.registerEvents(new CI(), this);
+
+        pm.registerEvents(new InventoryInspector(), this);
+
+        pm.registerEvents(new Poke(), this);
+
+        pm.registerEvents(this, this);
+
+        pm.registerEvents(new MSGTag(), this);
+
+
+
     }
     public void onDisable(){
         plugin = null;
