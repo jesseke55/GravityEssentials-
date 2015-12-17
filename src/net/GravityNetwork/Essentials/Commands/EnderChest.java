@@ -25,6 +25,9 @@ public class EnderChest implements Listener {
                     Player p = (Player) sender;
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("NO_PERMISSION")));
                 }
+                else if{
+                    sender.sendMessage(Main.getPlugin().getConfig().getString("YouAreConsole"));
+                }
             }
         }
 
