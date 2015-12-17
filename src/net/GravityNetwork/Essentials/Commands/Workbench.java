@@ -23,7 +23,7 @@ public class Workbench implements Listener, CommandExecutor {
         {
             if ((sender instanceof Player))
             {
-                if (sender.hasPermission("minechill.craft"))
+                if (sender.hasPermission("gravityessentials.craft"))
                 {
                     if (args.length >= 0)
                     {

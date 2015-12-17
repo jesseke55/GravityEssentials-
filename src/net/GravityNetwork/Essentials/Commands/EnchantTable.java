@@ -13,30 +13,28 @@ import org.bukkit.event.Listener;
  */
 public class EnchantTable implements Listener, CommandExecutor {
 
-    public Main main;
-
     public boolean onCommand(CommandSender sender, Command cmd, String commandlabel, String[] args){
 
-    if (cmd.getName().equalsIgnoreCase("enchant")) {
+    if (cmd.getName().equalsIgnoreCase("enchanttable")) {
         if ((sender instanceof Player))
         {
-            if (sender.hasPermission("minechill.enchant"))
+            if (sender.hasPermission("gravityessentials.enchanttable"))
             {
                 if (args.length >= 0)
                 {
                     Player player = (Player)sender;
                     player.openEnchanting(null, true);
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("SUCCESS") + main.getConfig().getString("open.enchanttable")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("SUCCESS") + Main.getPlugin().getConfig().getString("open.enchanttable")));
                     return true;
 
                 }
             }
             else {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("NO_PERMISSION")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("NO_PERMISSION")));
             }
         }
         else {
-            sender.sendMessage(main.getConfig().getString("YouAreConsole"));
+            sender.sendMessage(Main.getPlugin().getConfig().getString("YouAreConsole"));
         }
     }
         return true;

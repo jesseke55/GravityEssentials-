@@ -18,3 +18,13 @@ commands:
    poke:
      usage: /<command> <player>
      description: Poke a player
+   enderchest:
+     usage: /<command>
+     description: Open your enderchest
+   enchanttable:
+     usage: /<command>
+     description: Open a enchant table
+   craft:
+     usage: /<command>
+   shout:
+     usage: /<command>

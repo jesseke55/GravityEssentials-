@@ -11,13 +11,13 @@ import org.bukkit.event.Listener;
 /**
  * Created by Jesse on 17-12-2015.
  */
-public class EnderChest implements Listener, CommandExecutor {
+public class Echest implements Listener, CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandlabel, String[] args){
 
 
         if(cmd.getName().equalsIgnoreCase("enderchest")){
-            if (sender.hasPermission("enderchest")) {
+            if (sender.hasPermission("gravityessentials.enderchest")) {
                 if (sender instanceof Player) {
                     Player p = (Player) sender;
                     p.openInventory(p.getEnderChest());
