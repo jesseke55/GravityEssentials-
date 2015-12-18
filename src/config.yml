@@ -17,3 +17,5 @@ Prefixes:
 AutoSave:
    msg: '&6Saving all worlds.'
    complete: '&b&lSUCCESS&7: &eAutosave has been completed!'
+   interval: 1
+   prefix: '&a&lAutoSaver &r'

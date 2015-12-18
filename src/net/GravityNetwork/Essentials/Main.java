@@ -67,18 +67,15 @@ public class Main extends JavaPlugin implements Listener {
 
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
             public void run() {
-                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("Prefixes.Prefix") + Main.getPlugin().getConfig().getString("AutoSave.complete")));
+                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("AutoSave.prefix") + Main.getPlugin().getConfig().getString("AutoSave.msg")));
                 for (World w : Bukkit.getWorlds()) {
                     w.save();
-                    w.setAutoSave(true);
-                    w.setKeepSpawnInMemory(false);
-                    System.gc();
 
                 }
-                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("Prefixes.Prefix") + Main.getPlugin().getConfig().getString("AutoSave.complete")));
+                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("AutoSave.prefix") + Main.getPlugin().getConfig().getString("AutoSave.complete")));
 
             }
-        }, 0L, 1200 * Main.getPlugin().getConfig().getInt("AutoSaveInterval"));
+        }, 0L, 1200 * Main.getPlugin().getConfig().getInt("AutoSave.interval"));
 
 
     }
