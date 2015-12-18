@@ -12,54 +12,52 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class Main extends JavaPlugin implements Listener {
 
-    private PluginManager pm = Bukkit.getPluginManager();
+    private static Plugin plugin;
+    
+    public void onEnable(){
+        Main.plugin = this;
+        
+        initCommands();
+        initConfig();
+        initListeners();
+        initChannels();
+    }
+    public void onDisable(){
+        Main.plugin = null;
+    }
+    
     public static Plugin getPlugin() {
         return plugin;
     }
-    private static Plugin plugin;
-    public void onEnable(){
-        plugin = this;
+
+    private void initChannels() {
         Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+    }
 
-
+    private void initListeners() {
+        final PluginManager pm = Bukkit.getPluginManager();
+        
         pm.registerEvents(new Afk(), this);
-
         pm.registerEvents(new Broadcast(), this);
-
         pm.registerEvents(new Echest(), this);
-
         pm.registerEvents(new InventoryInspector(), this);
-
         pm.registerEvents(new Poke(), this);
+        pm.registerEvents(new MSGTag(), this);
+    }
 
-        pm.registerEvents(this, this);
+    private void initCommands(){
+        getCommand("afk").setExecutor(new Afk());
+        getCommand("broadcast").setExecutor(new Broadcast());
+        getCommand("enderchest").setExecutor(new Echest());
+        getCommand("enchanttable").setExecutor(new EnchantTable());
+        getCommand("viewinv").setExecutor(new InventoryInspector());
+        getCommand("poke").setExecutor(new Poke());
+        getCommand("shout").setExecutor(new Shout());
+        getCommand("craft").setExecutor(new Workbench());
+    }
 
-        getCommand("afk").setExecutor(new Afk() );
-
-        getCommand("broadcast").setExecutor(new Broadcast() );
-
-        getCommand("enderchest").setExecutor(new Echest() );
-
-        getCommand("enchanttable").setExecutor(new EnchantTable() );
-
-        getCommand("gravityessentials").setExecutor(new GravityEssentials() );
-
-        getCommand("viewinv").setExecutor(new InventoryInspector() );
-
-        getCommand("poke").setExecutor(new Poke() );
-
-        getCommand("shout").setExecutor(new Shout() );
-
-        getCommand("craft").setExecutor(new Workbench() );
-
-
+    private void initConfig(){
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
-
-
     }
-    public void onDisable(){
-        plugin = null;
-    }
-
 }
