@@ -2,6 +2,8 @@ package net.GravityNetwork.Essentials;
 
 import net.GravityNetwork.Essentials.Commands.*;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -21,6 +23,7 @@ public class Main extends JavaPlugin implements Listener {
         initConfig();
         initListeners();
         initChannels();
+        initSave();
     }
     public void onDisable(){
         Main.plugin = null;
@@ -42,7 +45,6 @@ public class Main extends JavaPlugin implements Listener {
         pm.registerEvents(new Echest(), this);
         pm.registerEvents(new InventoryInspector(), this);
         pm.registerEvents(new Poke(), this);
-        pm.registerEvents(new MSGTag(), this);
     }
 
     private void initCommands(){
@@ -59,5 +61,25 @@ public class Main extends JavaPlugin implements Listener {
     private void initConfig(){
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
+    }
+
+    private void initSave(){
+
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+            public void run() {
+                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("Prefixes.Prefix") + Main.getPlugin().getConfig().getString("AutoSave.complete")));
+                for (World w : Bukkit.getWorlds()) {
+                    w.save();
+                    w.setAutoSave(true);
+                    w.setKeepSpawnInMemory(false);
+                    System.gc();
+
+                }
+                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("Prefixes.Prefix") + Main.getPlugin().getConfig().getString("AutoSave.complete")));
+
+            }
+        }, 0L, 1200 * Main.getPlugin().getConfig().getInt("AutoSaveInterval"));
+
+
     }
 }

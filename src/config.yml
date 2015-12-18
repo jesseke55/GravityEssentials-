@@ -11,4 +11,9 @@ open:
 YouAreConsole: You are not a player!
 
 SUCCESS: '&b&lSUCCESS&7: '
-slowModeEnabled: false
+
+Prefixes:
+   Prefix: '&b&l[&a&lGravity Essentials&b&l] &r'
+AutoSave:
+   msg: '&6Saving all worlds.'
+   complete: '&b&lSUCCESS&7: &eAutosave has been completed!'
