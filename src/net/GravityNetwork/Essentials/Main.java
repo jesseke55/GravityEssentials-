@@ -32,8 +32,6 @@ public class Main extends JavaPlugin implements Listener {
 
         pm.registerEvents(new Poke(), this);
 
-        pm.registerEvents(new ChatCooldown(), this);
-
         pm.registerEvents(this, this);
 
         getCommand("afk").setExecutor(new Afk() );
