@@ -52,6 +52,7 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("broadcast").setExecutor(new Broadcast());
         getCommand("enderchest").setExecutor(new Echest());
         getCommand("enchanttable").setExecutor(new EnchantTable());
+        getCommand("gravityessentials").setExecutor(new GravityEssentials() );
         getCommand("viewinv").setExecutor(new InventoryInspector());
         getCommand("poke").setExecutor(new Poke());
         getCommand("shout").setExecutor(new Shout());

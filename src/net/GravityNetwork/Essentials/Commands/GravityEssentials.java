@@ -15,46 +15,35 @@ import org.bukkit.plugin.Plugin;
 public class GravityEssentials implements Listener, CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandlabel, String[] args){
-        if(cmd.getName().equalsIgnoreCase("gravityessentials")){
-           if(sender.hasPermission("gravityessentials.main")){
-                if(args.length == 0){
+
+        if(sender.hasPermission("gravityessentials.main")) {
+            if (cmd.getName().equalsIgnoreCase("gravityessentials")) {
+                if (args.length == 0) {
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("ENTER_ARGUMENT")));
-                    return true;
-                } else if (args.length == 1){
-                    if(args[0].equalsIgnoreCase("reload")){
-                        if(args.length == 2) {
-                            if(args[1].equalsIgnoreCase("config")) {
-                                PluginUtil.reload(PluginUtil.ReloadType.CONFIG);
-                                sender.sendMessage(ChatColor.GREEN + "Configuration is reloaded.");
-                                return true;
-                            } else if(args[1].equalsIgnoreCase("plugin")) {
-                                PluginUtil.reload(PluginUtil.ReloadType.PLUGIN);
-                                sender.sendMessage(ChatColor.GREEN + "Plugin is reloaded.");
-                                return true;
-                            } else if(args[1].equalsIgnoreCase("all")) {
-                                PluginUtil.reload(PluginUtil.ReloadType.ALL);
-                                sender.sendMessage(ChatColor.GREEN + "Plugin & Configuration is reloaded.");
-                                return true;
-                            }
-                        } else {
-                            PluginUtil.reload(PluginUtil.ReloadType.ALL);
-                            sender.sendMessage(ChatColor.GREEN + "Plugin & Configuration is reloaded.");
-                            return true;
-                        }
-                    } else  if(args[0].equalsIgnoreCase("nospamon")){
+                } else if (args.length == 1) {
+                    if (args[0].equalsIgnoreCase("reload")) {
+                        Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "plugman reload GravityEssentials");
+                        sender.sendMessage("The plugin has been reloaded!");
+                        return true;
+                    } else if (args[0].equalsIgnoreCase("nospamon")) {
                         Main.getPlugin().getConfig().set("slowModeEnabled", "true");
-                        Main.getPlugin().saveConfig();
+                        Main.getPlugin().reloadConfig();
                         sender.sendMessage("The anti-spam mode has been enabled!");
                         return true;
-                    } else  if(args[0].equalsIgnoreCase("nospamoff")){
+                    } else if (args[0].equalsIgnoreCase("nospamoff")) {
                         Main.getPlugin().getConfig().set("slowModeEnabled", "false");
-                        Main.getPlugin().saveConfig();
+                        Main.getPlugin().reloadConfig();
                         sender.sendMessage("The anti spam-mode has been disabled!");
                         return true;
                     }
                 }
             }
-        }
+            }else{
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("NO_PERMISSION")));
+            }
+
+
+
 
 
 
