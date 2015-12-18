@@ -19,8 +19,6 @@ public class Main extends JavaPlugin implements Listener {
     private static Plugin plugin;
     public void onEnable(){
         plugin = this;
-        cmds();
-        CONFIGURATION();
         Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
 
@@ -34,18 +32,10 @@ public class Main extends JavaPlugin implements Listener {
 
         pm.registerEvents(new Poke(), this);
 
+        pm.registerEvents(new ChatCooldown(), this);
+
         pm.registerEvents(this, this);
 
-        pm.registerEvents(new MSGTag(), this);
-
-
-
-    }
-    public void onDisable(){
-        plugin = null;
-    }
-
-    private void cmds(){
         getCommand("afk").setExecutor(new Afk() );
 
         getCommand("broadcast").setExecutor(new Broadcast() );
@@ -54,6 +44,8 @@ public class Main extends JavaPlugin implements Listener {
 
         getCommand("enchanttable").setExecutor(new EnchantTable() );
 
+        getCommand("gravityessentials").setExecutor(new GravityEssentials() );
+
         getCommand("viewinv").setExecutor(new InventoryInspector() );
 
         getCommand("poke").setExecutor(new Poke() );
@@ -61,10 +53,15 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("shout").setExecutor(new Shout() );
 
         getCommand("craft").setExecutor(new Workbench() );
-    }
 
-    private void CONFIGURATION(){
+
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
+
+
     }
+    public void onDisable(){
+        plugin = null;
+    }
+
 }

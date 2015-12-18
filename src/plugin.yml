@@ -28,3 +28,7 @@ commands:
      usage: /<command>
    shout:
      usage: /<command>
+   gravityessentials:
+     usage: /<command>
+     description: The essentials plugin for Gravity Network
+     aliases: [egravityessentials]

@@ -11,3 +11,4 @@ open:
 YouAreConsole: You are not a player!
 
 SUCCESS: '&b&lSUCCESS&7: '
+slowModeEnabled: false
