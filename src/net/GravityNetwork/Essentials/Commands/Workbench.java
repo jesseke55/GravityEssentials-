@@ -13,8 +13,6 @@ import org.bukkit.event.Listener;
  */
 public class Workbench implements Listener, CommandExecutor {
 
-    Main main;
-
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandlabel, String[] args){
 
@@ -29,15 +27,15 @@ public class Workbench implements Listener, CommandExecutor {
                     {
                         Player player = (Player)sender;
                         player.openWorkbench(null, true);
-                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("SUCCESS") + main.getConfig().getString("open.workbench")));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("SUCCESS") + Main.getPlugin().getConfig().getString("open.workbench")));
                     }
                 }
                 else {
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("NO_PERMISSION")));
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("NO_PERMISSION")));
                 }
             }
             else {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("YouAreConsole")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("YouAreConsole")));
             }
         }
 
