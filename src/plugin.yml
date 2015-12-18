@@ -32,3 +32,6 @@ commands:
      usage: /<command>
      description: The essentials plugin for Gravity Network
      aliases: [egravityessentials]
+   server:
+     usage: /<command>
+     description: Join a server

@@ -4,7 +4,9 @@ import net.GravityNetwork.Essentials.Commands.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -55,6 +57,7 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("gravityessentials").setExecutor(new GravityEssentials() );
         getCommand("viewinv").setExecutor(new InventoryInspector());
         getCommand("poke").setExecutor(new Poke());
+        getCommand("server").setExecutor(new Server());
         getCommand("shout").setExecutor(new Shout());
         getCommand("craft").setExecutor(new Workbench());
     }
@@ -79,5 +82,33 @@ public class Main extends JavaPlugin implements Listener {
         }, 0L, 1200 * Main.getPlugin().getConfig().getInt("AutoSave.interval"));
 
 
+    }
+
+    @EventHandler
+    public void commands(PlayerCommandPreprocessEvent e) {
+        if (e.getMessage().startsWith("/creative") || e.getMessage().startsWith("creative")) {
+            e.setCancelled(true);
+            e.getPlayer().performCommand("server creative");
+        }
+        if (e.getMessage().startsWith("/server opprison") || e.getMessage().startsWith("server opprison")) {
+            e.setCancelled(true);
+            e.getPlayer().performCommand("server prison");
+        }
+        if (e.getMessage().startsWith("/prison") || e.getMessage().startsWith("prison")) {
+            e.setCancelled(true);
+            e.getPlayer().performCommand("server prison");
+        }
+        if (e.getMessage().startsWith("/hub") || e.getMessage().startsWith("hub")) {
+            e.setCancelled(true);
+            e.getPlayer().performCommand("server hub");
+        }
+        if (e.getMessage().startsWith("/factions") || e.getMessage().startsWith("factions")) {
+            e.setCancelled(true);
+            e.getPlayer().performCommand("server factions");
+        }
+        if (e.getMessage().startsWith("/opfactions") || e.getMessage().startsWith("opfactions")) {
+            e.setCancelled(true);
+            e.getPlayer().performCommand("server factions");
+        }
     }
 }
