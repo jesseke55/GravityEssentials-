@@ -8,6 +8,8 @@ open:
    echest: '&aOpening your enderchest'
    workbench: '&aOpening a workbench'
    enchanttable: '&aOpening a enchanting table'
+   servergui: '&bServer inventory'
+   prefix: '&a&lOPENING&7: '
 YouAreConsole: You are not a player!
 
 SUCCESS: '&b&lSUCCESS&7: '
@@ -17,5 +19,20 @@ Prefixes:
 AutoSave:
    msg: '&6Saving all worlds.'
    complete: '&b&lSUCCESS&7: &eAutosave has been completed!'
-   interval: 1
+   interval: 10
    prefix: '&a&lAutoSaver &r'
+
+
+Menus:
+  ServerSelector:
+    Name: '&5Join a server.'
+    servers:
+      lore: '&6? Click here to join!'
+    Hub:
+      Name: '&bHub'
+    OPFactions:
+      Name: '&5OP Factions'
+    OPPrison:
+      Name: '&8OP Prison'
+    Creative:
+      Name: '&aCreative'

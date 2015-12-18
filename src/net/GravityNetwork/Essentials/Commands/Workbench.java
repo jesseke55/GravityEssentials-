@@ -27,7 +27,7 @@ public class Workbench implements Listener, CommandExecutor {
                     {
                         Player player = (Player)sender;
                         player.openWorkbench(null, true);
-                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("SUCCESS") + Main.getPlugin().getConfig().getString("open.workbench")));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("open.prefix") + Main.getPlugin().getConfig().getString("open.workbench")));
                     }
                 }
                 else {

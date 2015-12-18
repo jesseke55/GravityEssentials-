@@ -1,4 +1,7 @@
-package net.GravityNetwork.Essentials.util;
+package net.GravityNetwork.Essentials.Utils;
+
+import net.GravityNetwork.Essentials.Main;
+import org.bukkit.Bukkit;
 
 public class PluginUtil {
 
@@ -27,6 +30,6 @@ public class PluginUtil {
   
       PLUGIN,
       CONFIG,
-      ALL;
+      ALL,
   }
 }

@@ -21,7 +21,7 @@ public class Echest implements Listener, CommandExecutor {
                 if (sender instanceof Player) {
                     Player p = (Player) sender;
                     p.openInventory(p.getEnderChest());
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("open.echest")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("open.prefix")+Main.getPlugin().getConfig().getString("open.echest")));
                 } else {
                     Player p = (Player) sender;
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("NO_PERMISSION")));

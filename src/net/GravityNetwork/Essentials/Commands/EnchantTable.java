@@ -24,7 +24,7 @@ public class EnchantTable implements Listener, CommandExecutor {
                 {
                     Player player = (Player)sender;
                     player.openEnchanting(null, true);
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("SUCCESS") + Main.getPlugin().getConfig().getString("open.enchanttable")));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getPlugin().getConfig().getString("open.prefix") + Main.getPlugin().getConfig().getString("open.enchanttable")));
                     return true;
 
                 }
