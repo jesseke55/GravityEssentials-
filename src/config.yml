@@ -22,17 +22,3 @@ AutoSave:
    interval: 10
    prefix: '&a&lAutoSaver &r'
 
-
-Menus:
-  ServerSelector:
-    Name: '&5Join a server.'
-    servers:
-      lore: '&6? Click here to join!'
-    Hub:
-      Name: '&bHub'
-    OPFactions:
-      Name: '&5OP Factions'
-    OPPrison:
-      Name: '&8OP Prison'
-    Creative:
-      Name: '&aCreative'

@@ -57,7 +57,6 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("gravityessentials").setExecutor(new GravityEssentials() );
         getCommand("viewinv").setExecutor(new InventoryInspector());
         getCommand("poke").setExecutor(new Poke());
-        getCommand("server").setExecutor(new Server());
         getCommand("shout").setExecutor(new Shout());
         getCommand("craft").setExecutor(new Workbench());
     }
@@ -84,31 +83,5 @@ public class Main extends JavaPlugin implements Listener {
 
     }
 
-    @EventHandler
-    public void commands(PlayerCommandPreprocessEvent e) {
-        if (e.getMessage().startsWith("/creative") || e.getMessage().startsWith("creative")) {
-            e.setCancelled(true);
-            e.getPlayer().performCommand("server creative");
-        }
-        if (e.getMessage().startsWith("/server opprison") || e.getMessage().startsWith("server opprison")) {
-            e.setCancelled(true);
-            e.getPlayer().performCommand("server prison");
-        }
-        if (e.getMessage().startsWith("/prison") || e.getMessage().startsWith("prison")) {
-            e.setCancelled(true);
-            e.getPlayer().performCommand("server prison");
-        }
-        if (e.getMessage().startsWith("/hub") || e.getMessage().startsWith("hub")) {
-            e.setCancelled(true);
-            e.getPlayer().performCommand("server hub");
-        }
-        if (e.getMessage().startsWith("/factions") || e.getMessage().startsWith("factions")) {
-            e.setCancelled(true);
-            e.getPlayer().performCommand("server factions");
-        }
-        if (e.getMessage().startsWith("/opfactions") || e.getMessage().startsWith("opfactions")) {
-            e.setCancelled(true);
-            e.getPlayer().performCommand("server factions");
-        }
-    }
+
 }
